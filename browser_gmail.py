@@ -52,7 +52,7 @@ async def main():
             ),
         ),
         task=prompt,
-        llm=ChatOpenAI(model='gpt-4o-mini'),
+        llm=ChatAnthropic(model='claude-3-7-sonnet-latest'),
         controller=controller
     )
     result = await agent.run()
