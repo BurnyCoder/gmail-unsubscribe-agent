@@ -24,7 +24,7 @@ This is an automated agent that helps you unsubscribe from unwanted emails in yo
 
 1. First, start Chrome with remote debugging enabled:
    ```
-   ./start_chrome.sh
+   ./start_chrome_gmail.sh
    ```
    This will open Chrome to Gmail. You may need to log in to your Gmail account.
 

@@ -18,4 +18,4 @@ else
 fi
 
 echo "Starting $CHROME_BIN with remote debugging..."
-"$CHROME_BIN" --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-profile 
+"$CHROME_BIN" --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-profile https://gmail.com 

@@ -20,27 +20,26 @@ def log_progress(message: str) -> str:
 load_dotenv()
 
 prompt = """
-Your task is to help the user unsubscribe from unwanted emails in Gmail.
+Your task is to help the user summarize the most recent emails in Gmail.
 
 1. Open gmail.com and log in if necessary
-2. Go through the emails in the inbox one by one
-3. For each email:
+2. Identify the 2 most recent emails in the inbox
+3. For each of these 2 emails:
    - Open the email
-   - Look for an "unsubscribe" link somewhere in the email (usually at the bottom)
-   - If an unsubscribe link is found:
-     a. Click on the unsubscribe link
-     b. Complete any unsubscribe process - this might open a new tab or show a dialog
-     c. If it opens a new tab, confirm the unsubscription on that website or page
-     d. Close any new tabs opened during the process and return to Gmail
-     e. Log the name of the sender you've unsubscribed from
-   - If no unsubscribe link is found, just close the email and move to the next one
-4. Continue this process for all visible emails in the inbox
+   - Extract the following information:
+     a. Sender name and email address
+     b. Subject line
+     c. Date and time received
+     d. Main content/body of the email (summarized)
+   - Log a concise summary of each email
+   - Close the email and move to the next one
 
 Important instructions:
-- Be thorough in finding unsubscribe links - they might be labeled as "manage subscriptions" or similar
-- Look for unsubscribe text in small font at the bottom of emails
-- After unsubscribing, make sure to come back to the Gmail inbox
-- Keep track of which senders you've unsubscribed from
+- Focus only on the 2 most recent emails
+- Create clear, structured summaries that capture the key information
+- Respect privacy by not sharing sensitive information
+- Return to the Gmail inbox after summarizing each email
+- Log each summary after completing it
 """
 
 async def main():

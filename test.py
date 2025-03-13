@@ -27,7 +27,10 @@ async def main():
         controller=controller
     )
     result = await agent.run()
-    print(result)
+    print(result.all_results[-1].extracted_content)
+    return result.all_results[-1].extracted_content
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    result = asyncio.run(main())
+
