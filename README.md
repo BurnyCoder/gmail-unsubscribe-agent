@@ -6,7 +6,7 @@ This is an automated agent that helps you manage your Gmail inbox by either:
 
 The agent uses Chrome browser automation and LLM-powered browsing to navigate through Gmail.
 
-This project leverages Python, LangChain, browser-use for automation, Anthropic Claude (via Portkey API gateway), Chrome/Chromium browser, and dotenv for configuration management.
+This project leverages browser-use and Anthropic Claude via Portkey API gateway using Langchain.
 
 ## Prerequisites
 
@@ -33,7 +33,6 @@ This project leverages Python, LangChain, browser-use for automation, Anthropic 
    PORTKEY_VIRTUAL_KEY_ANTHROPIC=your_portkey_virtual_key_here
    # Optional: You can customize the agent's behavior by setting a custom prompt
    GMAIL_AGENT_PROMPT="Your custom prompt here"
-   ```
    ```
 
 ## Running the Agent
