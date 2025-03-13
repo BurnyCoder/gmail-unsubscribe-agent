@@ -6,6 +6,8 @@ This is an automated agent that helps you manage your Gmail inbox by either:
 
 The agent uses Chrome browser automation and LLM-powered browsing to navigate through Gmail.
 
+This project leverages Python, LangChain, browser-use for automation, Anthropic Claude (via Portkey API gateway), Chrome/Chromium browser, and dotenv for configuration management.
+
 ## Prerequisites
 
 - Python 3.11 or higher
