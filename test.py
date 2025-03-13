@@ -17,11 +17,16 @@ PORTKEY_API_BASE = os.getenv("PORTKEY_API_BASE")
 PORTKEY_API_KEY = os.getenv("PORTKEY_API_KEY")
 PORTKEY_VIRTUAL_KEY_ANTHROPIC = os.getenv("PORTKEY_VIRTUAL_KEY_ANTHROPIC")
 
-prompt = """
-Your task is to find cats on wikipedia and tell me which one is the cutest.
-"""
-
-async def main():
+async def run_browser_agent(prompt):
+    """
+    Run a browser agent with the given prompt.
+    
+    Args:
+        prompt (str): The task prompt for the agent
+        
+    Returns:
+        str: The final result from the agent
+    """
     # Set up Portkey headers for Anthropic/Claude
     portkey_headers = createHeaders(
         api_key=PORTKEY_API_KEY, 
@@ -56,4 +61,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    result = asyncio.run(main())
+    default_prompt = """
+    Your task is to find cats on wikipedia and tell me which one is the cutest.
+    """
+    result = asyncio.run(run_browser_agent(default_prompt))
