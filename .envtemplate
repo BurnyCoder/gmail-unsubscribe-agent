@@ -36,3 +36,25 @@ Important instructions:
 - After unsubscribing, make sure to come back to the Gmail inbox
 - Keep track of which senders you've unsubscribed from
 "
+GMAIL_AGENT_PROMPT="
+    Your task is to help the user summarize the most recent email in Gmail.
+
+    1. Open gmail.com and log in if necessary
+    2. Identify the most recent email in the inbox
+    3. For this email:
+       - Open the email
+       - Extract the following information:
+         a. Sender name and email address
+         b. Subject line
+         c. Date and time received
+         d. Main content/body of the email (summarized)
+       - Log a concise summary of the email
+       - Close the email
+
+    Important instructions:
+    - Focus only on the most recent email
+    - Create clear, structured summaries that capture the key information
+    - Respect privacy by not sharing sensitive information
+    - Return to the Gmail inbox after summarizing the email
+    - Log the summary after completing it
+    "
