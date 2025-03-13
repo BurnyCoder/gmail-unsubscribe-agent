@@ -42,16 +42,16 @@ There are two ways to run the agent:
 
 1. First, start Chrome with remote debugging enabled:
    ```
-   ./start_chrome_gmail.sh
+   python chrome_manager.py
    ```
    This will open Chrome to Gmail. You may need to log in to your Gmail account.
 
 2. Once Chrome is running with remote debugging, run the agent:
    ```
-   python browser_gmail.py
+   python gmail_agent.py
    ```
 
-### Option 2: Using the integrated script (after you're logged in)
+### Option 2: Using the integrated script (when you're logged in already)
 
 Run the all-in-one script that handles both Chrome startup and the agent:
 
@@ -64,22 +64,3 @@ This script will:
 - Navigate to Gmail 
 - Run the agent to process your emails
 - Properly clean up when finished or interrupted
-
-## Functionality
-
-By default, the agent is configured to summarize your most recent email, providing:
-- Sender information
-- Subject line
-- Date and time received
-- A summary of the content
-
-You can modify the agent's behavior by editing the `default_prompt` variable in either:
-- `run_gmail_agent.py` (for the integrated script)
-- `browser_gmail.py` (for the manual approach)
-
-An alternative prompt for unsubscribing from emails is provided but commented out in both files.
-
-## Stopping the Agent
-
-- If using the integrated script: Press `Ctrl+C` in the terminal
-- If using the manual approach: Press `Ctrl+C` in the terminal and manually close the Chrome window 
