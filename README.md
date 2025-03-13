@@ -19,18 +19,39 @@ The agent uses Chrome browser automation and LLM-powered browsing to navigate th
    pip install -r requirements.txt
    ```
 
-2. Edit the `.env` file to add your API keys:
+2. Copy the environment template to create your own `.env` file:
+   ```
+   cp .envtemplate .env
+   ```
+
+3. Edit the `.env` file to add your API keys:
    ```
    PORTKEY_API_BASE=your_portkey_api_base_here
    PORTKEY_API_KEY=your_portkey_api_key_here
    PORTKEY_VIRTUAL_KEY_ANTHROPIC=your_portkey_virtual_key_here
+   # Optional: You can customize the agent's behavior by setting a custom prompt
+   GMAIL_AGENT_PROMPT="Your custom prompt here"
+   ```
    ```
 
 ## Running the Agent
 
 There are two ways to run the agent:
 
-### Option 1: Using the integrated script (recommended)
+### Option 1: Manual two-step process, good for first time
+
+1. First, start Chrome with remote debugging enabled:
+   ```
+   ./start_chrome_gmail.sh
+   ```
+   This will open Chrome to Gmail. You may need to log in to your Gmail account.
+
+2. Once Chrome is running with remote debugging, run the agent:
+   ```
+   python browser_gmail.py
+   ```
+
+### Option 2: Using the integrated script (after you're logged in)
 
 Run the all-in-one script that handles both Chrome startup and the agent:
 
@@ -43,19 +64,6 @@ This script will:
 - Navigate to Gmail 
 - Run the agent to process your emails
 - Properly clean up when finished or interrupted
-
-### Option 2: Manual two-step process
-
-1. First, start Chrome with remote debugging enabled:
-   ```
-   ./start_chrome_gmail.sh
-   ```
-   This will open Chrome to Gmail. You may need to log in to your Gmail account.
-
-2. Once Chrome is running with remote debugging, run the agent:
-   ```
-   python browser_gmail.py
-   ```
 
 ## Functionality
 
